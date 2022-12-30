@@ -1,0 +1,13 @@
+<odoo>
+    <!-- Games Menu -->
+    <record id="action_carddecks_game" model="ir.actions.act_window">
+        <field name="name">Games</field>
+        <field name="res_model">carddecks_game.game</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_game"
+              name="Games"
+              parent="carddecks.menu_card_decks"
+              action="action_carddecks_game"/>
+
+</odoo>

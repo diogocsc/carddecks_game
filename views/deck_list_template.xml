@@ -1,0 +1,14 @@
+<odoo>
+    <template id="deck_list_template" name="Deck List">
+        <div id="wrap" class="container">
+            <h1>Decks</h1>
+            <t t-foreach="decks" t-as="deck">
+                <div class="row">
+                    <span t-field="deck.name" />
+                    <span t-field="deck.total_cards" />
+                    <button name="create_new_game" string="Play" type="object" class="btn-primary" />
+                </div>
+            </t>
+        </div>
+    </template>
+</odoo>

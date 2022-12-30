@@ -1,0 +1,12 @@
+<odoo>
+    <record id="inherit_view_tree_deck" model="ir.ui.view">
+        <field name="name">carddecks.deck.tree.inherit</field>
+        <field name="model">carddecks.deck</field>
+        <field name="inherit_id" ref="carddecks.view_tree_deck"/>
+        <field name="arch" type="xml">
+           <field name="total_cards" position="after">
+                <button name="create_new_game" string="Play" type="object" class="btn-primary" />
+           </field>
+        </field>
+    </record>
+</odoo>

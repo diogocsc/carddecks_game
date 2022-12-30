@@ -1,0 +1,173 @@
+
+  .card {
+    /*border: 1px solid black;*/
+    /*border-radius: 25% 15%;*/
+  /*  background-color: #AAA333; */
+    color: white;
+    height: 200px ;
+    width: 300px !important;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18pt;
+    margin: auto;
+    display: block !important;
+  }
+  #question {
+    margin:auto;
+
+  }
+  
+ 
+  .main {
+  
+        /*  background-color: #00FFFF; */
+		  color: #6378a2;
+          width: 400px;
+          height: 500px ;
+		  margin-bottom: 10px;
+  
+  }
+
+  .restart{
+    
+    position:relative;
+    width: 200px;
+    top: 0px;
+    text-align: center;
+    height: 25px;
+    cursor: pointer;
+    margin:auto;
+	padding-top: 5px;
+	border: 1px solid black;
+	background-color: rgba(219,222,231,0.9);
+	color: #944443;
+	
+  }
+    .next{
+    
+    position:relative;
+    width: 200px;
+    top: 0px;
+    text-align: center;
+    height: 25px;
+    cursor: pointer;
+    margin:auto;
+	margin-top: 100px;
+	padding-top: 5px;
+	border: 1px solid black;
+	background-color: rgba(219,222,231,0.9);
+	color: #944443;
+	
+  }
+  
+
+  .area {
+    width: 100%;
+    
+  }
+  .even {
+    background-color: #AAA333;
+  }
+  .content{
+    margin:0 auto;
+    max-height: 1500px;
+
+  }
+
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+
+.playGame {
+  display: block;
+  margin:0 auto;
+  text-align: center;
+
+}
+
+.welcome{
+  position: relative; 
+  margin:0 auto; 
+  width: 100%; 
+  font-weight: bold; 
+  color: #000;
+  font-size:20pt;
+  display: block;
+  padding-top: 20px;  
+  margin-top:5px;
+}
+
+.verso {
+    background: no-repeat center/100% url("images/verso.png"); background-attachment: fixed;
+    height:583px;
+}
+
+.button{
+  display: block;
+  width: 400px;
+  background: #12a812;
+  border: 2px solid rgba(33, 68, 72, 0.59);
+  border-radius: 10px;
+
+  /*Step 3: Text Styles*/
+ color: rgba(0, 0, 0, 0.55);
+ text-align: center;
+ font: bold 3.2em/100px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+/*Step 3: Link Styling*/
+a.button {
+ text-decoration: none;
+}
+
+.callout {
+
+  background: no-repeat center/100% url("images/callout_bemvindo_1.png") ; 
+  /*callout image from https://pt.clipartlogo.com/image/star-callout-clip-art_380310.html*/
+  border-radius: 5px;
+  width: 300px;
+  height: 232px;
+  position: absolute;
+  left:40%;
+  top:40%;
+
+
+}
+
+.rowEven, .rowUnEven {
+  padding:5px;
+}
+ 
+.rowEven {
+ background-color: lightseagreen;
+}
+
+.rowUnEven {
+  background-color: lightskyblue;
+
+}
+
+.pw_prompt {
+    position:fixed;
+    left: 50%;
+    top:25%;
+    margin-left:-100px;
+    padding:15px;
+    width:200px;
+    border:1px solid black;
+	background-color:white;
+}
+.pw_prompt label {
+    display:block; 
+    margin-bottom:5px;
+}
+.pw_prompt input {
+    margin-bottom:10px;
+}
+
+.padTop {
+	
+	padding-top: 60%;
+	
+}

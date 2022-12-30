@@ -1,0 +1,17 @@
+<odoo>
+    <template id="game_template" name="Game">
+
+        <div id="wrap" class="container">
+            <h1><t t-out="game.deck.name"/></h1>
+            <t t-if="game.currentCard_image == False ">
+                <h2><t t-out="game.currentCard_cardText"/></h2>
+            </t>
+            <t t-if="game.currentCard_image" >
+                <img t-attf-src="data:image/*;base64,{{game.currentCard_image}}"
+                     t-att-alt="game.currentCard_cardText" />
+            </t>
+            
+        </div>
+
+    </template>
+</odoo>

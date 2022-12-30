@@ -1,0 +1,26 @@
+<odoo>
+    <record id="view_form_game" model="ir.ui.view">
+        <field name="name">Game Form</field>
+        <field name="model">carddecks_game.game</field>
+        <field name="arch" type="xml">
+            <form string="Game">
+                <group>
+                    <field name="deck" />
+                </group>
+                <group>
+                    <field name="currentCard_image" readonly="1"/>
+                    <button name="next_card_button" string="Next Card" type="object" class="btn-primary" />
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="view_tree_game" model="ir.ui.view">
+        <field name="name">Games List</field>
+        <field name="model">carddecks_game.game</field>
+        <field name="arch" type="xml">
+            <tree string="Games">
+                <field name="deck" />
+            </tree>
+        </field>
+    </record>
+</odoo>
