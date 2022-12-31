@@ -12,8 +12,8 @@ With this module you can configure decks of cards and play them
 
     """,
     'category': 'Services/Card Decks',
-    'website': 'https://github.com/diogocsc/carddecks',
-    'depends' : ["base", "carddecks"],
+    'website': 'https://github.com/diogocsc/carddecks_game',
+    'depends' : ["web", "carddecks"],
     'data': [
         'security/ir.model.access.csv',
         'views/game_template.xml',
@@ -28,8 +28,15 @@ With this module you can configure decks of cards and play them
     'application': True,
     'license': 'AGPL-3',
     'assets': {
-        "web.assets_backend": [
+        'web.assets_backend': [
             "carddecks_game/static/src/css/styles.css",
-        ]
+            "carddecks_game/static/src/js/index.js",
+
+        ],
+        'web.assets_frontend': [
+            "carddecks_game/static/src/css/styles.css",
+            "carddecks_game/static/src/js/index.js",
+
+        ],
     }
 }

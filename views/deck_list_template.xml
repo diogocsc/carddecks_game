@@ -1,14 +1,17 @@
 <odoo>
     <template id="deck_list_template" name="Deck List">
+        <script type="module" src="/carddecks_game/static/src/js/index.js"></script>
         <div id="wrap" class="container">
             <h1>Decks</h1>
             <t t-foreach="decks" t-as="deck">
                 <div class="row">
                     <span t-field="deck.name" />
                     <span t-field="deck.total_cards" />
-                    <button name="create_new_game" string="Play" type="object" class="btn-primary" />
+                    <button t-att-onclick="'play(%s)' % deck.id "> Play </button>
+
                 </div>
             </t>
         </div>
+
     </template>
 </odoo>

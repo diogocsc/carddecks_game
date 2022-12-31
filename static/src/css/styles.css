@@ -4,13 +4,17 @@
     /*border-radius: 25% 15%;*/
   /*  background-color: #AAA333; */
     color: white;
-    height: 200px ;
-    width: 300px !important;
+    height: 600px ;
+    width: 400px !important;
     cursor: pointer;
     text-align: center;
     font-size: 18pt;
     margin: auto;
     display: block !important;
+  }
+
+  .textCenter {
+    text-align: center;
   }
   #question {
     margin:auto;
