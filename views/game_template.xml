@@ -3,15 +3,19 @@
     <link rel='stylesheet' href='/carddecks_game/static/src/css/styles.css'/>
         <div id="wrap" class="container textCenter">
             <h1><t t-out="game.deck.name"/></h1>
-            <t t-if="game.currentCard_image == False ">
-                <h2><t t-out="game.currentCard_cardText"/></h2>
+            <t t-if="game.currentCard.image == False ">
+                <div class="card"><h2><t t-out="game.currentCard.cardText"/></h2></div>
             </t>
-            <t t-if="game.currentCard_image" >
+            <t t-if="game.currentCard.image" >
                 <img t-attf-src="data:image/*;base64,{{game.currentCard_image}}"
-                     t-att-alt="game.currentCard_cardText" class="card" />
+                     t-att-alt="game.currentCard.cardText" class="card" />
             </t>
-            <t t-set="result_function" t-value="game.next_card_button()"/>
-            <h2><a t-att-href="'/game?id=%s' % game.id">Next Card</a></h2>
+            <t t-if="game.currentCard.cardText != False">
+                <h2><a t-att-href="'/game?id=%s' % game.id">Next Card</a></h2>
+            </t>
+            <t t-if="game.currentCard.cardText == False">
+                <h2><a t-att-href="'/game?id=%s' % game.id">Start Game</a></h2>
+            </t>
 
         </div>
 

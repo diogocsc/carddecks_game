@@ -18,8 +18,3 @@ class Deck(models.Model):
             'res_id': game.id
         }
 
-    def create_game(self, deck_id):
-        self.ensure_one()
-        Game = self.env["carddecks_game.game"]
-        game = Game.create({"deck": deck_id})
-        return game.id

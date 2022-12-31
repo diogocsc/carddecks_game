@@ -1,12 +1,12 @@
 /** @odoo-module **/
 
 
-odoo.define('carddecks.deck', function (require) {
+/* odoo.define('carddecks.deck', function (require) {
 "use strict";
 
     window.play = play;
     function play(deck_id){
-        this._rpc({
+       this._rpc({
             model: 'carddecks_deck',
             method: 'create_game',
             args: [{"deck_id": deck_id}]
@@ -15,4 +15,9 @@ odoo.define('carddecks.deck', function (require) {
                 location.replace("/game?id="+result)
         });
     };
-})
+})*/
+
+    window.play = play;
+    function play(deck_id){
+       location.replace("/game/new?deck_id="+deck_id)
+    };

@@ -3,14 +3,19 @@
     /*border: 1px solid black;*/
     /*border-radius: 25% 15%;*/
   /*  background-color: #AAA333; */
-    color: white;
+    color: #AAA333;
     height: 600px ;
     width: 400px !important;
     cursor: pointer;
     text-align: center;
     font-size: 18pt;
     margin: auto;
-    display: block !important;
+    /*display: block !important;*/
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    border: solid 1px #dadada;
   }
 
   .textCenter {
