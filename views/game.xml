@@ -5,7 +5,7 @@
         <field name="arch" type="xml">
             <form string="Game Zone">
                 <group>
-                    <field name = "deck" nolabel="1" class="h1"/>
+                    <field name = "deck"  class="h1"/>
                     <field name="currentCard_cardText" attrs="{'invisible': [('currentCard_image','!=', False)]}"/>
                     <field name="currentCard_image" widget="image" nolabel="1" class="card" readonly="1" attrs="{'invisible': [('currentCard_image','=', False)]}" />
                     <button name="next_card_button" string="Next Card" type="object" class="btn-primary" />
