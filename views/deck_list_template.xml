@@ -1,13 +1,15 @@
 <odoo>
     <template id="deck_list_template" name="Deck List">
+        <link rel='stylesheet' href='/carddecks_game/static/src/css/styles.css'/>
         <script type="module" src="/carddecks_game/static/src/js/index.js"></script>
         <div id="wrap" class="container">
             <h1>Decks</h1>
             <t t-foreach="decks" t-as="deck">
-                <div class="row">
-                    <span t-field="deck.name" />
-                    <span t-field="deck.total_cards" />
-                    <button t-att-onclick="'play(%s)' % deck.id "> Play </button>
+                <div class="deckCard">
+                    <h2 t-field="deck.name" />
+                    <div class="deckDescription" t-field="deck.description" />
+                    <div class="cardsCount" t-field="deck.total_cards" />
+                    <a class="deckButton" t-att-href="'/game/new?deck_id=%s' % deck.id "> Play </a>
 
                 </div>
             </t>

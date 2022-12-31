@@ -11,10 +11,10 @@
                      t-att-alt="game.currentCard.cardText" class="card" />
             </t>
             <t t-if="game.currentCard.cardText != False">
-                <h2><a t-att-href="'/game?id=%s' % game.id">Next Card</a></h2>
+                <h2><a t-att-href="'/game?id=%s' % game.base64_name">Next Card</a></h2>
             </t>
             <t t-if="game.currentCard.cardText == False">
-                <h2><a t-att-href="'/game?id=%s' % game.id">Start Game</a></h2>
+                <h2><a t-att-href="'/game?id=%s' % game.base64_name">Start Game</a></h2>
             </t>
 
         </div>

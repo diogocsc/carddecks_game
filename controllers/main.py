@@ -6,7 +6,7 @@ class Game(http.Controller):
     @http.route("/game")
     def game(self, **kwargs):
         Game = http.request.env["carddecks_game.game"]
-        game = Game.search([("id", "=", kwargs.get("id"))])
+        game = Game.search([("base64_name", "=", kwargs.get("id"))])
         game.next_card_button()
         return http.request.render(
             "carddecks_game.game_template",
@@ -22,7 +22,7 @@ class Game(http.Controller):
                                 'message': 'Deck not specified'}}
         Game = http.request.env["carddecks_game.game"]
         game = Game.create({"deck": deck_id})
-        return request.redirect('/game?id=%s' % game.id)
+        return request.redirect('/game?id=%s' % game.base64_name)
 
     @http.route("/decks")
     def deck_list(self, **kwargs):

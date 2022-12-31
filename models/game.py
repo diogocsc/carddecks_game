@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import random
 
-from odoo import fields, models, api
-
+from odoo import fields, models, api,_
+import base64
 
 class Game(models.Model):
     _name = "carddecks_game.game"
@@ -12,6 +12,25 @@ class Game(models.Model):
     currentCard_cardText = fields.Char("Current Card text", related="currentCard.cardText")
     currentCard_image = fields.Binary("Current Image", related="currentCard.image")
     deck = fields.Many2one("carddecks.deck", "Game Deck")
+    name = fields.Char(string='Game Number', required=True, copy=False, readonly=True,
+                       index=True, default=lambda self: _('New'))
+
+    _sql_constraints = [('unique_id', 'UNIQUE(name)', "Game Name must be unique"), ]
+    base64_name = fields.Char(compute="_compute_base64_name", store=True)
+
+    @api.model
+    def create(self, vals):
+        if vals.get('name', _('New')) == _('New'):
+            vals['name'] = self.env['ir.sequence'].next_by_code('game_seq') or _('New')
+        res = super().create(vals)
+        return res
+
+    @api.depends("name")
+    def _compute_base64_name(self):
+        for game in self:
+            sample_string_bytes = game.name.encode("ascii")
+            base64_bytes = base64.b64encode(sample_string_bytes)
+            game.base64_name = base64_bytes.decode("ascii")
 
     def next_card_button(self):
         self.ensure_one()

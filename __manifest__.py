@@ -16,6 +16,7 @@ With this module you can configure decks of cards and play them
     'depends' : ["web", "carddecks"],
     'data': [
         'security/ir.model.access.csv',
+        'data/ir_sequence.xml',
         'views/game_template.xml',
         'views/deck_list_template.xml',
         'views/carddecks_game_menu.xml',
