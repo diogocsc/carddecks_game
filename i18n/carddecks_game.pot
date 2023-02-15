@@ -1,0 +1,147 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* carddecks_game
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-15 21:35+0000\n"
+"PO-Revision-Date: 2023-02-15 21:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: carddecks_game
+#: model:ir.model.fields,field_description:carddecks_game.field_carddecks_game_game__base64_name
+msgid "Base64 Name"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model.fields,field_description:carddecks_game.field_carddecks_game_game__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model.fields,field_description:carddecks_game.field_carddecks_game_game__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model.fields,field_description:carddecks_game.field_carddecks_game_game__currentCard
+msgid "Current Card"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model.fields,field_description:carddecks_game.field_carddecks_game_game__currentCard_cardText
+msgid "Current Card text"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model.fields,field_description:carddecks_game.field_carddecks_game_game__currentCard_image
+msgid "Current Image"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model,name:carddecks_game.model_carddecks_deck
+msgid "Deck"
+msgstr ""
+
+#. module: carddecks_game
+#: model_terms:ir.ui.view,arch_db:carddecks_game.deck_list_template
+msgid "Decks"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model.fields,field_description:carddecks_game.field_carddecks_game_game__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model,name:carddecks_game.model_carddecks_game_game
+#: model_terms:ir.ui.view,arch_db:carddecks_game.view_form_game
+msgid "Game"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model.fields,field_description:carddecks_game.field_carddecks_game_game__deck
+msgid "Game Deck"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model.constraint,message:carddecks_game.constraint_carddecks_game_game_unique_id
+msgid "Game Name must be unique"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model.fields,field_description:carddecks_game.field_carddecks_game_game__name
+msgid "Game Number"
+msgstr ""
+
+#. module: carddecks_game
+#: model_terms:ir.ui.view,arch_db:carddecks_game.view_form_game_area
+msgid "Game Zone"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.actions.act_window,name:carddecks_game.action_carddecks_game
+#: model:ir.ui.menu,name:carddecks_game.menu_game
+#: model_terms:ir.ui.view,arch_db:carddecks_game.view_tree_game
+msgid "Games"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model.fields,field_description:carddecks_game.field_carddecks_game_game__id
+msgid "ID"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model.fields,field_description:carddecks_game.field_carddecks_game_game____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model.fields,field_description:carddecks_game.field_carddecks_game_game__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model.fields,field_description:carddecks_game.field_carddecks_game_game__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: carddecks_game
+#. odoo-python
+#: code:addons/carddecks_game/models/game.py:0
+#: code:addons/carddecks_game/models/game.py:0
+#: code:addons/carddecks_game/models/game.py:0
+#: code:addons/carddecks_game/models/game.py:0
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: carddecks_game
+#: model_terms:ir.ui.view,arch_db:carddecks_game.game_template
+#: model_terms:ir.ui.view,arch_db:carddecks_game.view_form_game
+#: model_terms:ir.ui.view,arch_db:carddecks_game.view_form_game_area
+msgid "Next Card"
+msgstr ""
+
+#. module: carddecks_game
+#: model_terms:ir.ui.view,arch_db:carddecks_game.deck_list_template
+#: model_terms:ir.ui.view,arch_db:carddecks_game.inherit_view_tree_deck
+msgid "Play"
+msgstr ""
+
+#. module: carddecks_game
+#: model:ir.model.fields,field_description:carddecks_game.field_carddecks_game_game__usedCards
+msgid "Played Cards"
+msgstr ""
+
+#. module: carddecks_game
+#: model_terms:ir.ui.view,arch_db:carddecks_game.game_template
+msgid "Start Game"
+msgstr ""
