@@ -24,6 +24,24 @@ class Game(http.Controller):
         game = Game.sudo().create({"deck": deck_id})
         return request.redirect('/game?id=%s' % game.base64_name)
 
+    @http.route("/game/special/new", auth="public")
+    def play_game_2(self, **kwargs):
+        """
+        This was created following a specific prospect request,
+        regarding having cards directed to language learning decks.
+        """
+        deck_name = kwargs.get("deck_name")
+        if not deck_name:
+            return {'warning': {
+                                'title': 'Warning!',
+                                'message': 'Deck not specified'}}
+        Game = http.request.env["carddecks_game.game"]
+        Deck = http.request.env["carddecks.deck"]
+        deck_id = Deck.sudo().search([("name", "=", deck_name)], limit=1).id
+        print(f"DECK ID :::: {deck_id}")
+        game = Game.sudo().create({"deck": deck_id})
+        return request.redirect('/game?id=%s' % game.base64_name)
+
     @http.route("/decks", auth="public")
     def deck_list(self, **kwargs):
         Deck = http.request.env["carddecks.deck"]
