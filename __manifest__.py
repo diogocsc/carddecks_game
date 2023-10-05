@@ -36,6 +36,7 @@ With this module you can configure decks of cards and play them
         ],
         'web.assets_frontend': [
             "carddecks_game/static/src/css/styles.css",
+            "carddecks_game/static/src/css/game_styles.css",
             "carddecks_game/static/src/js/index.js",
 
         ],

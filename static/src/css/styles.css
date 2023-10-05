@@ -1,52 +1,60 @@
-
-body {
-    background-color: #f8f5f5;
+/* Style the card grid container */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-.cardsCount{
-    font-size: 15px;
-    color: #425466;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    background-color: #e4ecf7;
-    width: 80px;
-    text-align: center;
-    padding: 5px;
-    position: absolute;
-    top: 1.5rem;
-    right: 10px
+/* Style individual cards */
+.card {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.deckDescription {
-    font-size: 15px;
-    white-space: pre-wrap;
-    width: 80%;
-    text-align: justify;
-    color: #425466;
-    padding-top: 10px
+/* Style card header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.deckCard {
-    margin: 1rem;
-    padding: 1.5rem;
-    text-align: left;
-    color: inherit;
-    background-color: #fff;
-    text-decoration: none;
-    border: 1px solid #eeebed;
-    border-radius: 10px;
-    -webkit-transition: color .15s ease,border-color .15s ease;
-    transition: color .15s ease,border-color .15s ease;
-    position: relative;
-    z-index: 2;
-    min-height: 250px;
-    max-width: 400px;
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.deckButton {
-    font-size: 18px;
-    line-height: 36px;
-    margin: 25px 5px 10px;
+.card-counter {
+/*  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;*/
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #425466;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background-color: #e4ecf7;
+}
+
+/* Style card description */
+.card-description {
+  font-size: 16px;
+  color: #777;
+  flex-grow: 1;
+}
+
+/* Style card footer */
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.play-button {
     color: #fff;
     background: -webkit-gradient(linear,left top,left bottom,from(#ff6100),to(#ff5050));
     background: -webkit-linear-gradient(#ff6100,#ff5050);
@@ -61,189 +69,11 @@ body {
     outline: none;
     padding: 5px 15px;
     font-weight: 500;
-    position: absolute;
     cursor: pointer;
     text-decoration:none;
-}
-
-  .card {
-    /*border: 1px solid black;*/
-    /*border-radius: 25% 15%;*/
-  /*  background-color: #AAA333; */
-    color: #AAA333;
-    height: 600px ;
-    width: 400px !important;
-    cursor: pointer;
-    text-align: center;
-    font-size: 18pt;
-    margin: auto;
-    /*display: block !important;*/
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    border: solid 1px #dadada;
-  }
-
-  .textCenter {
-    text-align: center;
-  }
-  #question {
-    margin:auto;
-
-  }
-  
- 
-  .main {
-  
-        /*  background-color: #00FFFF; */
-		  color: #6378a2;
-          width: 400px;
-          height: 500px ;
-		  margin-bottom: 10px;
-  
-  }
-
-  .restart{
-    
-    position:relative;
-    width: 200px;
-    top: 0px;
-    text-align: center;
-    height: 25px;
-    cursor: pointer;
-    margin:auto;
-	padding-top: 5px;
-	border: 1px solid black;
-	background-color: rgba(219,222,231,0.9);
-	color: #944443;
-	
-  }
-    .next{
-    
-    position:relative;
-    width: 200px;
-    top: 0px;
-    text-align: center;
-    height: 25px;
-    cursor: pointer;
-    margin:auto;
-	margin-top: 100px;
-	padding-top: 5px;
-	border: 1px solid black;
-	background-color: rgba(219,222,231,0.9);
-	color: #944443;
-	
-  }
-  
-
-  .area {
-    width: 100%;
-    
-  }
-  .even {
-    background-color: #AAA333;
-  }
-  .content{
-    margin:0 auto;
-    max-height: 1500px;
-
-  }
-
-img.center {
-    display: block;
-    margin: 0 auto;
-}
-
-.playGame {
-  display: block;
-  margin:0 auto;
-  text-align: center;
 
 }
 
-.welcome{
-  position: relative; 
-  margin:0 auto; 
-  width: 100%; 
-  font-weight: bold; 
-  color: #000;
-  font-size:20pt;
-  display: block;
-  padding-top: 20px;  
-  margin-top:5px;
-}
-
-.verso {
-    background: no-repeat center/100% url("images/verso.png"); background-attachment: fixed;
-    height:583px;
-}
-
-.button{
-  display: block;
-  width: 400px;
-  background: #12a812;
-  border: 2px solid rgba(33, 68, 72, 0.59);
-  border-radius: 10px;
-
-  /*Step 3: Text Styles*/
- color: rgba(0, 0, 0, 0.55);
- text-align: center;
- font: bold 3.2em/100px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-}
-
-/*Step 3: Link Styling*/
-a.button {
- text-decoration: none;
-}
-
-.callout {
-
-  background: no-repeat center/100% url("images/callout_bemvindo_1.png") ; 
-  /*callout image from https://pt.clipartlogo.com/image/star-callout-clip-art_380310.html*/
-  border-radius: 5px;
-  width: 300px;
-  height: 232px;
-  position: absolute;
-  left:40%;
-  top:40%;
-
-
-}
-
-.rowEven, .rowUnEven {
-  padding:5px;
-}
- 
-.rowEven {
- background-color: lightseagreen;
-}
-
-.rowUnEven {
-  background-color: lightskyblue;
-
-}
-
-.pw_prompt {
-    position:fixed;
-    left: 50%;
-    top:25%;
-    margin-left:-100px;
-    padding:15px;
-    width:200px;
-    border:1px solid black;
-	background-color:white;
-}
-.pw_prompt label {
-    display:block; 
-    margin-bottom:5px;
-}
-.pw_prompt input {
-    margin-bottom:10px;
-}
-
-.padTop {
-	
-	padding-top: 60%;
-	
+.play-button:hover {
+  background-color: #0056b3;
 }

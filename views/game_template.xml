@@ -1,23 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="game_template" name="Game">
-    <link rel='stylesheet' href='/carddecks_game/static/src/css/styles.css'/>
-        <div id="wrap" class="container textCenter">
-            <h1><t t-out="game.deck.name"/></h1>
-            <t t-if="game.currentCard.image == False ">
-                <div class="card"><h2><t t-out="game.currentCard.cardText"/></h2></div>
+  <template id="game_template" name="Game">
+    <link rel='stylesheet' href='/carddecks_game/static/src/css/game_styles.css'/>
+
+      <div class="container">
+        <div class="card-game-container">
+          <div class="deck-name"><t t-out="game.deck.name"/></div>
+
+            <t t-if="game.currentCard.image == False and game.currentCard.cardText != False ">
+                 <div class="card"><h2><t t-out="game.currentCard.cardText"/></h2></div>
             </t>
             <t t-if="game.currentCard.image" >
                 <img t-attf-src="data:image/*;base64,{{game.currentCard_image}}"
                      t-att-alt="game.currentCard.cardText" class="card" />
             </t>
             <t t-if="game.currentCard.cardText != False">
-                <h2><a t-att-href="'/game?id=%s' % game.base64_name">Next Card</a></h2>
+                <h2><a t-att-href="'/game?id=%s' % game.base64_name" class="card-button">Next Card</a></h2>
             </t>
-            <t t-if="game.currentCard.cardText == False">
-                <h2><a t-att-href="'/game?id=%s' % game.base64_name">Start Game</a></h2>
+            <t t-if="game.has_game_ended == True">
+                <h2><a t-att-href="'/game/new?deck_id=%s' % game.deck.id" class="card-button">New Game</a></h2>
             </t>
-
+            <t t-if="game.currentCard.cardText == False and game.has_game_ended == False">
+                 <t t-if="game.deck.image" >
+                    <img t-attf-src="data:image/*;base64,{{game.deck.image}}"
+                         t-att-alt="game.deck.category.partner.name" class="card" />
+                </t>
+                <h2><a t-att-href="'/game?id=%s' % game.base64_name" class="card-button">Start Game</a></h2>
+            </t>
         </div>
-
-    </template>
+      </div>
+  </template>
 </odoo>
+
+

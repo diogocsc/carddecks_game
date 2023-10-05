@@ -17,6 +17,8 @@ class Game(models.Model):
 
     _sql_constraints = [('unique_id', 'UNIQUE(name)', "Game Name must be unique"), ]
     base64_name = fields.Char(compute="_compute_base64_name", store=True)
+    has_game_ended = fields.Boolean()
+
 
     @api.model
     def create(self, vals):
@@ -38,6 +40,7 @@ class Game(models.Model):
         playable_cards = Card.search([("deck.id", "=", self.deck.id),
                                       ("cardText", "not in", self.usedCards.mapped("cardText"))])
         self.currentCard = random.choice(playable_cards) if playable_cards else None
+        self.has_game_ended = False if playable_cards else True
         if self.currentCard:
             self.usedCards += self.currentCard
 
