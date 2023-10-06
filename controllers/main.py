@@ -41,7 +41,7 @@ class Game(http.Controller):
         deck_id = Deck.sudo().search([("name", "=", deck_name)], limit=1).id
         print(f"DECK ID :::: {deck_id}")
         game = Game.sudo().create({"deck": deck_id})
-        return request.redirect('/game?id=%s' % game.base64_name)
+        return request.redirect('/game?id=%s&start=1' % game.base64_name)
 
     @http.route("/decks", auth="public")
     def deck_list(self, **kwargs):
