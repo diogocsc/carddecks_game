@@ -2,6 +2,7 @@
     <record id="view_form_game_area" model="ir.ui.view">
         <field name="name">Game Area</field>
         <field name="model">carddecks_game.game</field>
+
         <field name="arch" type="xml">
             <form string="Game Zone">
                 <group>

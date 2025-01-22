@@ -6,15 +6,20 @@
       <div class="container">
         <div class="card-game-container">
           <div class="deck-name"><t t-out="game.deck.name"/></div>
-
             <t t-if="game.currentCard.url == False and game.currentCard.cardText != False ">
-                 <div class="card"><h2><t t-out="game.currentCard.cardText"/></h2></div>
+                 <div class="card">
+                     <h2><t t-out="game.currentCard.cardText"/></h2>
+                 </div>
             </t>
-            <t t-if="game.currentCard.url" >
+            <t t-if="game.currentCard.url and game.image_has_text_below == False">
                <!-- <img t-attf-src="data:image/*;base64,{{game.currentCard_image}}"
                      t-att-alt="game.currentCard.cardText" class="card" />-->
                 <img t-attf-src="{{game.currentCard.url}}"
                      t-att-alt="game.currentCard.cardText" class="card" />
+            </t>
+            <t t-if="game.currentCard.url and game.image_has_text_below == True" >
+                <img t-attf-src="{{game.currentCard.url}}" t-att-alt="game.currentCard.cardText" class="card wsub" />
+                <div class="card_subtitle"><h2><t t-out="game.currentCard.cardText"/></h2></div>
             </t>
             <t t-if="game.currentCard.cardText != False">
                 <h2><a t-att-href="'/game?id=%s' % game.base64_name" class="card-button">Next Card</a></h2>

@@ -22,6 +22,31 @@
   flex-direction: column;
   justify-content: center;
 }
+/* card subtitle */
+.card, .wsub {
+  height: 500px;
+}
+
+/* Style the card when with subtitles */
+.card_subtitle{
+  width: 400px; /* Minimum width for desktop */
+  max-width: 80%; /* Maximum width for smaller screens */
+  height: 100px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 20px;
+  flex-grow: 1; /* Allow the card to grow and take available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+
+
+
 
 /* Style the deck name on the top */
 .deck-name {

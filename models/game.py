@@ -18,6 +18,7 @@ class Game(models.Model):
     _sql_constraints = [('unique_id', 'UNIQUE(name)', "Game Name must be unique"), ]
     base64_name = fields.Char(compute="_compute_base64_name", store=True)
     has_game_ended = fields.Boolean()
+    image_has_text_below = fields.Boolean(related="currentCard.image_has_text_below")
 
 
     @api.model
