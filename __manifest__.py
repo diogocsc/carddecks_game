@@ -38,6 +38,7 @@ With this module you can configure decks of cards and play them
             "carddecks_game/static/src/css/styles.css",
             "carddecks_game/static/src/css/game_styles.css",
             "carddecks_game/static/src/js/index.js",
+            "carddecks_game/static/src/js/game_translation.js",
 
         ],
     }
