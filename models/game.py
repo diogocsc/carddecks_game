@@ -11,7 +11,7 @@ class Game(models.Model):
     currentCard = fields.Many2one("carddecks.card", "Current Card")
     currentCard_cardText = fields.Char("Current Card text", related="currentCard.cardText")
     currentCard_image = fields.Binary("Current Image", related="currentCard.image")
-    deck = fields.Many2one("carddecks.deck", "Game Deck")
+    deck = fields.Many2one("carddecks.deck", "Game Deck", ondelete="cascade")
     name = fields.Char(string='Game Number', required=True, copy=False, readonly=True,
                        index=True, default=lambda self: _('New'))
 
@@ -20,13 +20,14 @@ class Game(models.Model):
     has_game_ended = fields.Boolean()
     image_has_text_below = fields.Boolean(related="currentCard.image_has_text_below")
 
-
     @api.model
     def create(self, vals):
         if vals.get('name', _('New')) == _('New'):
-            vals['name'] = self.env['ir.sequence'].next_by_code('game_seq') or _('New')
-        res = super().create(vals)
-        return res
+            seq = self.env['ir.sequence'].sudo().next_by_code('game_seq')
+            if not seq:
+                seq = "Game-%s" % fields.Datetime.now().strftime("%Y%m%d%H%M%S%f")
+            vals['name'] = seq
+        return super().create(vals)
 
     @api.depends("name")
     def _compute_base64_name(self):

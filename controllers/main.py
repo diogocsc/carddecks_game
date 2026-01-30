@@ -201,15 +201,19 @@ class Game(http.Controller):
             {"game": translated_game}
         )
 
-    @http.route("/game/new", auth="public")
+    @http.route("/game/new", type="http", auth="public", website=True)
     def play_game(self, **kwargs):
         deck_id = kwargs.get("deck_id")
         if not deck_id:
-            return {'warning': {
-                                'title': 'Warning!',
-                                'message': 'Deck not specified'}}
-        Game = http.request.env["carddecks_game.game"]
-        game = Game.sudo().create({"deck": deck_id})
+            return request.render("web.http_error", {
+                "status": 400,
+                "status_message": "Deck not specified",
+                "message": "A deck_id must be provided to start a game."
+            })
+
+        Game = request.env["carddecks_game.game"].sudo()
+        game = Game.create({"deck": int(deck_id)})
+
         return request.redirect('/game?id=%s&start=1' % game.base64_name)
 
     @http.route("/game/special/new", auth="public")
